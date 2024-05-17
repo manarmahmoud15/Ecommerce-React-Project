@@ -10,7 +10,7 @@ export default function Carts() {
   let {getCart ,UpdateCart , DeleteCart ,setCartNumber } = useContext(cartContext);
   useEffect (()=>{
     (async()=>{
-      let {data} = await getCart();
+      let {data} = await getCart(`https://ecommerce.routemisr.com/api/v1/cart`);
       setData(data.data.products)
       setPrice(data.data.totalCartPrice)
     })()

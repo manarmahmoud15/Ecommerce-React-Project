@@ -65,8 +65,7 @@ export default function Products() {
           ))}
         </div>
       ) : (
-        <div className="vh-100 d-flex justify-content-center align-items-center">
-          
+        <div className="vh-100 d-flex justify-content-center align-items-center">         
           <InfinitySpin
             visible={true}
             width="200"

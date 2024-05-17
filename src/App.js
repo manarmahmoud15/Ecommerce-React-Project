@@ -23,6 +23,7 @@ import CartContextProvider from "./Context/cartContext";
 import { ToastContainer, toast } from 'react-toastify';
 import CheckOut from "./components/checkOut/checkOut";
 import ForgetPassword from "./components/forgetPassword/forgetPassword";
+import ResetPassword from "./components/resetPassword/resetPassword";
 const router = createBrowserRouter([
   {
     path: "",
@@ -99,6 +100,12 @@ const router = createBrowserRouter([
         path: "forgetPassword",
         element: (
             <ForgetPassword/>
+        ),
+      },
+      {
+        path: "resetPassword",
+        element: (
+            <ResetPassword/>
         ),
       },
       { path: "*", element: <NotFound /> },
