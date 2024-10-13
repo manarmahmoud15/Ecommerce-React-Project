@@ -1,31 +1,38 @@
 import { useFormik } from 'formik';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { cartContext } from '../../Context/cartContext';
 
 export default function CheckOut() {
-  let { CheckOut } = useContext(cartContext);
-
-  let id = '65d3a588fd7fcd003463a4a6';
+    
+    const [cartId , setCartId] = useState('')
+  let { CheckOut ,getCart } = useContext(cartContext);
+  useEffect(()=>{
+    (async()=>{
+      let {data} = await getCart(`https://ecommerce.routemisr.com/api/v1/cart`);
+      setCartId(data.data._id)
+    })()
+  },[])
+  async function payment(values )  {
+    let data = await CheckOut(cartId , values)
+    console.log(data.data)
+    if (data.data.status == 'success')
+    {
+      console.log('hi')
+      window.location = data.data.session.url
+    }
+  }
   const formik = useFormik({
     initialValues: {
       details: '',
       city: '',
       phone: '',
     },
-    onSubmit: async (values) => {
-      let data = await CheckOut(id , values)
-      console.log(data.data)
-      if (data.data.status == 'success')
-      {
-        console.log('hi')
-        window.location = data.data.session.url
-      }
-    },
+    onSubmit: payment
   });
 
   return (
     <div className="my-5">
-      <h1 style={{ color: "#0aad0a" }} className="text-center">Payment Form</h1>
+      <h1 style={{ color: "#88B04B" }} className="text-center">Payment Form</h1>
       <form onSubmit={formik.handleSubmit}>
         <div className="row ">
           <div className="col-md-8 m-auto w-50 shadow p-4 bg-light">

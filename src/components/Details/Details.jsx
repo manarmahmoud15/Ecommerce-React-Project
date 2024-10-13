@@ -42,7 +42,7 @@ export default function Details() {
             <p>{prodectDetails?.description}</p>
           </di>
           <div>
-            <p>{prodectDetails?.category.name}</p>
+            <p>{prodectDetails?.category?.name}</p>
             <div>
             <p>
               <span style={{ color: "#0aad0a" }}> Price</span>

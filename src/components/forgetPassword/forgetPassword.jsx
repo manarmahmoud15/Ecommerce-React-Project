@@ -70,7 +70,7 @@ export default function ForgetPassword() {
         <button
           type="submit"
           className="btn text-light my-3"
-          style={{ backgroundColor: "#0aad0a" }}
+          style={{ backgroundColor: "#88B04B" }}
           disabled = {!(Formik.dirty && Formik.isValid)}
         >
           Send Code
@@ -103,7 +103,7 @@ export default function ForgetPassword() {
         <button
           type="submit"
           className="btn text-light my-3"
-          style={{ backgroundColor: "#0aad0a" }}
+          style={{ backgroundColor: "#88B04B" }}
           disabled = {!(verifyFormik.dirty && verifyFormik.isValid)}
         >
           Verfiy Code 

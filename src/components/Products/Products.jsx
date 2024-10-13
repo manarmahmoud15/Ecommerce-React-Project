@@ -34,27 +34,27 @@ export default function Products() {
           {productList.map((product) => (
             <div className="col-md-3" key={product._id}>
               <div className="product p-5">
-                <Link to={`/details/${product._id}`} className="nav-link">
+                <Link to={`/details/${product?._id}`} className="nav-link">
                 <img
-                  src={product.imageCover}
+                  src={product?.imageCover}
                   className="w-100"
-                  alt={product.title}
+                  alt={product?.title}
                 />
-                <p style={{ color: "#0aad0a" }}>{product.category.name}</p>
-                <h6>{product.title}</h6>
+                <p style={{ color: "#0aad0a" }}>{product?.category?.name}</p>
+                <h6>{product?.title}</h6>
                 <div className="d-flex justify-content-between">
-                  <p>{product.price} EGP</p>
+                  <p>{product?.price} EGP</p>
                   <p>
-                    {product.ratingsAverage}
+                    {product?.ratingsAverage}
                     <i
                       className="fa-solid fa-star"
-                      style={{ color: "#ffc500" }}
+                      style={{ color: "#ffc500" , height: '50px'}}
                     ></i>
                   </p>
                 </div>
                 </Link>
                 <button
-                  onClick={()=> {AddToMyCart(product._id)}}
+                  onClick={()=> {AddToMyCart(product?._id)}}
                   className="btn justify-content-center align-items-center text-light"
                   style={{ backgroundColor: "#0aad0a" }}
                 >

@@ -52,20 +52,20 @@ export default function Carts() {
               return <>
               {/* {
                 product.count !== 0 ?  */}
-                 <div className="row border-bottom py-5" key={product._id}>
+                 <div className="row border-bottom py-5" key={product?._id}>
                 <div className="col-md-1">
-                  <img src={product.product.imageCover} alt='cover' className='w-100'/>
+                  <img src={product?.product?.imageCover} alt='cover' className='w-100'/>
                 </div>
                 <div className="col-md-11 d-flex justify-content-between align-items-center">
                   <div >
-                  <h5>{product.product.title}</h5>
-                  <p>{product.price}</p>
-                  <button onClick={()=>{removeProduct(product.product._id)}} className='btn btn-outline-danger'><i className='fa-regular fa-trash-can'></i> Remove</button>
+                  <h5>{product?.product?.title}</h5>
+                  <p>{product?.price}</p>
+                  <button onClick={()=>{removeProduct(product?.product?._id)}} className='btn btn-outline-danger'><i className='fa-regular fa-trash-can'></i> Remove</button>
                     </div>
                     <div >
-                <button onClick={()=> {UpdateProduct(product.product._id , product.count+1)}} className='btn btn-outline-success'> + </button>
-                <span className='mx-2'>{product.count}</span>
-                <button onClick={()=> {UpdateProduct(product.product._id , product.count-1)}} className='btn btn-outline-success'>  - </button>
+                <button onClick={()=> {UpdateProduct(product?.product?._id , product?.count+1)}} className='btn btn-outline-success'> + </button>
+                <span className='mx-2'>{product?.count}</span>
+                <button onClick={()=> {UpdateProduct(product?.product?._id , product?.count-1)}} className='btn btn-outline-success'>  - </button>
 
                   </div>
                

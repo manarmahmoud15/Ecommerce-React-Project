@@ -24,6 +24,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import CheckOut from "./components/checkOut/checkOut";
 import ForgetPassword from "./components/forgetPassword/forgetPassword";
 import ResetPassword from "./components/resetPassword/resetPassword";
+import Allorders from './components/allorders/allorders'
 const router = createBrowserRouter([
   {
     path: "",
@@ -85,7 +86,14 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
       },
-      
+      {
+        path: "allorders",
+        element: (
+          <ProtectedRoute>
+            <Allorders/>
+          </ProtectedRoute>
+        ),
+      },
       {
         path: "details/:id",
         element: (
